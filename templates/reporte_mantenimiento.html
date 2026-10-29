@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporte de Mantenimiento - {{placa}}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #2c3e50; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #3498db; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        .info { margin-bottom: 20px; }
+        .info p { margin: 5px 0; }
+        .total { font-weight: bold; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>Reporte de Mantenimiento del Vehículo</h1>
+    <div class="info">
+        <p><strong>Placa:</strong> {{placa}}</p>
+        <p><strong>Marca:</strong> {{marca}}</p>
+        <p><strong>Modelo:</strong> {{modelo}}</p>
+        <p><strong>Año:</strong> {{anio}}</p>
+        <p><strong>Color:</strong> {{color}}</p>
+        <p><strong>Kilometraje Actual:</strong> {{kilometraje_actual}} km</p>
+        <p><strong>Fecha del Reporte:</strong> {{fecha_reporte}}</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Tipo de Servicio</th>
+                <th>Descripción</th>
+                <th>KM Aplicado</th>
+                <th>KM Próximo Servicio</th>
+                <th>Costo</th>
+                <th>Taller</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{filas_servicios}}
+        </tbody>
+    </table>
+
+    <p class="total">Costo Total de Mantenimientos: ${{costo_total}}</p>
+</body>
+</html>
